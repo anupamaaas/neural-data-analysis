@@ -6,5 +6,5 @@ This repository is a collection of MATLAB scripts is designed to extract meaning
 Primary Language: MATLAB
 
 Data: 
-1. Part-1 () uses visually evoked data that includes data for both when the triggers are OFF and ON, the sample frequency and the wideband data.
+1. Part-1 () uses visually evoked data that includes extracellular neural recordings for both when the triggers are OFF and ON, the sample frequency and the wideband data.
 2. Part-2 () uses
