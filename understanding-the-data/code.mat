@@ -1,0 +1,50 @@
+% Neural Data Analysis
+% Part-1
+
+load %insert_data
+
+low_cutoff_freq = %insert_lower_cutoff_frequency 
+up_cutoff_freq = %insert_upper_cutoff_frequency
+sampling_rate =  %insert_sampling rate
+time_axis = 1/fs:1/(fs/10):3;
+t1 = 1/fs:(1/fs):3;
+filter_order = %order_of_butterworth_filter
+%Creating the butterworth filter
+[b,a] = butter(filter_order,[low_cutoff_freq,up_cutoff_freq]/sampling_rate*0.5,'bandpass');   
+% LPF Data
+wideband_data = %insert_wideband_data;
+dec_wideband_data = decimate(double(wideband_data(1:length(t1))),10);
+filtered_data=filter(b,a,dec_wideband_data);
+
+figure ();
+subplot(2,1,1);
+plot (time_axis, filtered_data,'k',time_axis,dec_wideband_data);
+hold off axis tight;
+xlabel('Time (sec)'); ylabel('Amplitude (V)');
+legend('Filtered Wave','Raw Wave','Location','southeast');
+title('Filtered and Raw Waveforms');
+
+subplot(2,1,2);
+hold on;
+for i=1:16 
+    wideband_data_col= Wideband_data{i,1};
+    filter_wideband_data_col=filter(b,a,wideband_data_col);
+    if i==1
+        plot(filter_wideband_data_col,'o');
+    elseif i==2
+        plot (filter_wideband_data_col,'r');
+    %>
+    %.
+    %.
+    else   %until the number of channels in the data
+        plot (filter_wideband_data_col,'m-.');
+    end
+end
+hold off;
+lgd=legend('Order: 1','Order: 2', ... %as many channels
+           'Order: 16','Location', 'Northwest');
+axis tight;
+xlabel('Time (sec)'); ylabel('Amplitude (V)');
+title('Filtered Waveforms From Channels 1-(n)');
+sg= sgtitle('Raw and Filtered Waveforms From Butterworth Filter of Order = (order_of_filter)'); 
+sg.FontSize = 13;
