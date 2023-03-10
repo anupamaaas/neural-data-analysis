@@ -1,4 +1,4 @@
-# neural-data-analysis
+# Neural Data Analysis 🧠
 
 This repository is a collection of MATLAB scripts is designed to extract meaningful insights from neural data. The code is well-documented and organised, making it easy for users to navigate and understand. This project is intended to be a collaborative effort, with contributions from the research community encouraged and welcomed. 
 
