@@ -19,7 +19,7 @@ filtered_data=filter(b,a,dec_wideband_data);
 figure ();
 subplot(2,1,1);
 plot (time_axis, filtered_data,'k',time_axis,dec_wideband_data);
-hold off axis tight;
+hold off; axis tight;
 xlabel('Time (sec)'); ylabel('Amplitude (V)');
 legend('Filtered Wave','Raw Wave','Location','southeast');
 title('Filtered and Raw Waveforms');
