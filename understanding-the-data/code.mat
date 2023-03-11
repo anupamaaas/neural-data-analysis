@@ -19,7 +19,7 @@ filtered_data=filter(b,a,dec_wideband_data);
 figure ();
 subplot(2,1,1);
 plot (time_axis, filtered_data,'k',time_axis,dec_wideband_data);
-hold off; axis tight;
+axis tight;
 xlabel('Time (sec)'); ylabel('Amplitude (V)');
 legend('Filtered Wave','Raw Wave','Location','southeast');
 title('Filtered and Raw Waveforms');
@@ -33,7 +33,7 @@ for i=1:16
         plot(filter_wideband_data_col,'o');
     elseif i==2
         plot (filter_wideband_data_col,'r');
-    %>
+    %.
     %.
     %.
     else   %until the number of channels in the data
