@@ -41,8 +41,8 @@ for i=1:16
     end
 end
 hold off;
-lgd=legend('Order: 1','Order: 2', ... %as many channels
-           'Order: 16','Location', 'Northwest');
+lgd=legend('Channel-1','Channel-2', ... %as many channels
+           'Channel-(n)','Location', 'Northwest');
 axis tight;
 xlabel('Time (sec)'); ylabel('Amplitude (V)');
 title('Filtered Waveforms From Channels 1-(n)');
